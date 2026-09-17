@@ -9,7 +9,7 @@
    =========================================== */
 
 /* External font - add your choice from Google Fonts, Inter will not be graded */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
   /* Spacing scale */
@@ -20,16 +20,16 @@
   --spacing-xl: 2rem;
   
   /* Colors - customize these */
-  --color-bg: hsl(210, 20%, 98%);
+  --color-bg: hsl(0, 0%, 90%);
   --color-surface: hsl(0, 0%, 100%);
-  --color-text: hsl(210, 10%, 20%);
-  --color-text-muted: hsl(210, 10%, 50%);
-  --color-accent: hsl(220, 80%, 50%);
-  --color-border: hsla(210, 10%, 20%, 0.1);
+  --color-text: hsl(220, 12%, 14%);
+  --color-text-muted: hsl(220, 8%, 48%);
+  --color-accent: hsl(215, 72%, 42%);
+  --color-border: hsla(220, 12%, 14%, 0.12);
   
   /* Typography */
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-display: 'Inter', system-ui, sans-serif; /* Change this */
+  --font-body: 'Montserrat', system-ui, sans-serif;
+  --font-display: 'Montserrat', system-ui, sans-serif;
 }
 
 /* Reset */
@@ -58,11 +58,19 @@ body {
 
 .page-layout {
   display: grid;
-  /* YOUR CODE: grid-template-areas */
-  /* YOUR CODE: grid-template-columns */
-  /* YOUR CODE: grid-template-rows */
+  grid-template-areas:
+    "header"
+    "hero"
+    "list"
+    "footer";
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto auto auto;
   min-height: 100vh;
   gap: var(--spacing-md);
+}
+
+.page-layout > * {
+  min-width: 0;
 }
 
 /* ===========================================
@@ -72,24 +80,30 @@ body {
    =========================================== */
 
 .site-header {
-  /* YOUR CODE: grid-area */
+  grid-area: header;
   background: var(--color-surface);
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-lg);
   border-bottom: 1px solid var(--color-border);
 }
 
 .hero-section {
-  /* YOUR CODE: grid-area */
+  grid-area: hero;
+  display: grid;
+  justify-items: center;
+  text-align: center;
   padding: var(--spacing-xl);
 }
 
 .list-section {
-  /* YOUR CODE: grid-area */
+  grid-area: list;
   padding: var(--spacing-lg);
 }
 
 .site-footer {
-  /* YOUR CODE: grid-area */
+  grid-area: footer;
+  display: grid;
+  justify-items: center;
+  text-align: center;
   background: var(--color-text);
   color: var(--color-bg);
   padding: var(--spacing-lg);
@@ -104,6 +118,7 @@ body {
 
 .header-nav {
   display: flex;
+  min-width: 0;
   justify-content: space-between;
   align-items: center;
 }
@@ -117,15 +132,113 @@ body {
 
 /* Make list items flow horizontally on large screens */
 .list-section {
-  /* YOUR CODE: display flex, gap, wrap behavior */
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
 }
 
 .list-item {
   background: var(--color-surface);
-  padding: var(--spacing-lg);
+  padding: 0;
   border-radius: 0.5rem;
   border: 1px solid var(--color-border);
-  /* YOUR CODE: flex-basis or width for sizing */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 18rem;
+  overflow: hidden;
+}
+
+.component-main {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+}
+
+.component-picture {
+  flex: 0 0 9.25rem;
+  width: 9.25rem;
+  height: 9.25rem;
+  min-height: 0;
+  object-fit: cover;
+}
+
+.component-content {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  height: auto;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  padding: 0;
+}
+
+.component-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+}
+
+.component-info h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+time,
+.author,
+.component-stats {
+  color: var(--color-text-muted);
+}
+
+time {
+  display: block;
+  font-size: 0.9rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 0.75rem;
+  white-space: normal;
+}
+
+.author img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.component-description {
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.component-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: 0.72rem;
+}
+
+.component-stats div {
+  display: inline-flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.component-stats img {
+  width: 1.1rem;
+  height: 1.1rem;
 }
 
 /* ===========================================
@@ -138,16 +251,40 @@ body {
 
 @media (max-width: 48rem) {
   .page-layout {
-    /* YOUR CODE: redefine grid-template-areas */
-    /* YOUR CODE: single column layout */
+    grid-template-areas:
+      "header"
+      "hero"
+      "list"
+      "footer";
+    grid-template-columns: 100%;
   }
   
   .list-section {
-    /* YOUR CODE: change flex-direction if needed */
+    flex-direction: column;
   }
   
   .list-item {
-    /* YOUR CODE: full width on mobile */
+    width: 100%;
+    min-width: 0;
+  }
+
+  .component-main {
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  .component-picture {
+    flex-basis: 8rem;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .component-content {
+    height: auto;
+  }
+
+  .component-stats {
+    padding: var(--spacing-md);
   }
 }
 

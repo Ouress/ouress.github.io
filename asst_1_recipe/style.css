@@ -194,7 +194,7 @@ body::before {
     display: flex;
     min-height: 14rem;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     overflow: hidden;
     padding: var(--space-4);
     border-radius: 1rem;
@@ -223,6 +223,7 @@ body::before {
     border-radius: 0.5rem;
     background: #ffffff;
     box-shadow: 0 0.5rem 1rem rgba(8, 61, 79, 0.2), inset 0 1px rgba(255, 255, 255, 0.95);
+    transform: translateY(1.05rem);
 }
 
 .aesthetic-label,
@@ -546,6 +547,6 @@ h2 {
 }
 
 @media (min-width: 70rem) {
-    .recipe-header { min-height: 18rem; padding: var(--space-5); }
+    .recipe-header { min-height: 17rem; padding: var(--space-5); }
     .recipe-meta, .recipe-description { align-self: stretch; }
 }

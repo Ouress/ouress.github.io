@@ -3,46 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Card Assignment - Make This Beautiful!</title>
+    <title>Classic Chocolate Chip Cookies | Frutiger Aero Recipe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="recipe-container">
-        <!-- Recipe Header Section -->
         <header class="recipe-header">
-            <h1 class="recipe-title">Classic Chocolate Chip Cookies</h1>
-            <img src="https://via.placeholder.com/300x200/8B4513/FFFFFF?text=Cookie+Photo" 
-                 alt="Golden brown chocolate chip cookies on a cooling rack" 
+            <div class="window-bar" aria-hidden="true">
+                <span class="window-label">cookies.recipe</span>
+                <span class="window-controls"><span>_</span><span>□</span><span>×</span></span>
+            </div>
+            <div class="header-copy">
+                <h1 class="recipe-title">Classic Chocolate Chip Cookies</h1>
+            </div>
+            <p class="recipe-kicker">A sunny, cloud-soft bake for sharing.</p>
+            <img src="assets/herocookie.jpeg" 
+                 alt="Golden brown chocolate chip cookies on a cooling rack"
                  class="recipe-image">
         </header>
 
-        <!-- Recipe Meta Information -->
         <section class="recipe-meta">
-            <div class="meta-item">
-                <strong>Prep Time:</strong> 15 minutes
+            <div class="window-bar" aria-hidden="true">
+                <span class="window-label">recipe details.txt</span>
+                <span class="window-controls"><span>_</span><span>□</span><span>×</span></span>
             </div>
-            <div class="meta-item">
-                <strong>Cook Time:</strong> 12 minutes
-            </div>
-            <div class="meta-item">
-                <strong>Total Time:</strong> 27 minutes
-            </div>
-            <div class="meta-item">
-                <strong>Servings:</strong> 24 cookies
-            </div>
-            <div class="meta-item">
-                <strong>Difficulty:</strong> Easy
+            <div class="recipe-details">
+                <div class="recipe-detail">
+                    <strong>Prep Time:</strong> 15 minutes
+                </div>
+                <div class="recipe-detail">
+                    <strong>Cook Time:</strong> 12 minutes
+                </div>
+                <div class="recipe-detail">
+                    <strong>Total Time:</strong> 27 minutes
+                </div>
+                <div class="recipe-detail">
+                    <strong>Servings:</strong> 24 cookies
+                </div>
+                <div class="recipe-detail">
+                    <strong>Difficulty:</strong> Easy
+                </div>
             </div>
         </section>
 
-        <!-- Recipe Description -->
-        <section class="recipe-description">
-            <p>These classic chocolate chip cookies are crispy on the edges, chewy in the middle, and packed with chocolate chips. Perfect for any occasion, from lunch boxes to holiday gatherings. This foolproof recipe has been tested countless times and always delivers delicious results.</p>
+        <section class="recipe-description" aria-labelledby="description-heading">
+            <div class="window-bar" aria-hidden="true">
+                <span class="window-label">welcome note.txt</span>
+                <span class="window-controls"><span>_</span><span>□</span><span>×</span></span>
+            </div>
+            <p id="description-heading">These classic chocolate chip cookies are crispy on the edges, chewy in the middle, and packed with chocolate chips. Perfect for any occasion, from lunch boxes to holiday gatherings. This foolproof recipe has been tested countless times and always delivers delicious results.</p>
         </section>
 
-        <!-- Ingredients Section -->
-        <section class="ingredients-section">
-            <h2>Ingredients</h2>
+        <aside class="wmp" aria-label="Windows Media Player">
+            <img src="assets/wmp.png?v=3" alt="Windows Media Player">
+        </aside>
+
+        <main class="recipe-content">
+        <section class="ingredients-section" aria-labelledby="ingredients-heading">
+            <div class="window-bar" aria-hidden="true">
+                <span class="window-label">ingredients.txt</span>
+                <span class="window-controls"><span>_</span><span>□</span><span>×</span></span>
+            </div>
+            <h2 id="ingredients-heading">Ingredients</h2>
             <ul class="ingredients-list">
                 <li>2¼ cups all-purpose flour</li>
                 <li>1 teaspoon baking soda</li>
@@ -57,9 +82,20 @@
             </ul>
         </section>
 
-        <!-- Instructions Section -->
-        <section class="instructions-section">
-            <h2>Instructions</h2>
+        <section class="cookie-picture" aria-labelledby="cookie-picture-heading">
+            <div class="window-bar">
+                <span class="window-label" id="cookie-picture-heading">cookiepic.jpeg</span>
+                <span class="window-controls" aria-hidden="true"><span>_</span><span>□</span><span>×</span></span>
+            </div>
+            <img src="assets/cookiepic.jpeg" alt="Classic Chocolate Chip Cookies">
+        </section>
+
+        <section class="instructions-section" aria-labelledby="instructions-heading">
+            <div class="window-bar" aria-hidden="true">
+                <span class="window-label">instructions.txt</span>
+                <span class="window-controls"><span>_</span><span>□</span><span>×</span></span>
+            </div>
+            <h2 id="instructions-heading">Instructions</h2>
             <ol class="instructions-list">
                 <li class="instruction-step">
                     <strong>Preheat oven</strong> to 375°F (190°C). Line baking sheets with parchment paper.
@@ -87,33 +123,23 @@
                 </li>
             </ol>
         </section>
+        </main>
 
-        <!-- Recipe Footer -->
+        <aside class="recipe-sidebar" aria-label="Frutiger Aero desktop gadgets">
+            <img src="assets/sidebar.png" alt="Vista-style sidebar with weather, clock, calendar, and camera gadgets">
+        </aside>
+
         <footer class="recipe-footer">
-            <p>Recipe adapted from traditional family cookbook | Nutritional info: ~150 calories per cookie</p>
-            <p>Tags: dessert, baking, cookies, chocolate, family-friendly</p>
+            <img class="taskbar-start" src="assets/windows-vista.png" alt="" aria-hidden="true">
+            <div class="window-bar" aria-hidden="true">
+                <span class="window-label">about this recipe</span>
+                <span class="window-controls"><span>_</span><span>□</span><span>×</span></span>
+            </div>
+            <p class="aesthetic-label">CARI aesthetic: <a href="https://cari.institute/aesthetics/" target="_blank" rel="noopener">Frutiger Aero</a></p>
+            <p class="taskbar-item">Recipe adapted from traditional family cookbook</p>
+            <p class="taskbar-item">Nutritional info: ~150 calories per cookie</p>
+            <p class="taskbar-item">Tags: dessert, baking, cookies, chocolate, family-friendly</p>
         </footer>
-    </div>
-
-    <!-- Assignment Instructions (remove this section when styling) -->
-    <div style="background: white; border: 3px solid black; margin: 20px; padding: 20px; font-family: Arial;">
-        <h2>Your Assignment: Make This Recipe Card Beautiful!</h2>
-        <h3>Requirements:</h3>
-        <ul>
-            <li><strong>Use semantic HTML structure</strong> - the HTML is already properly structured with header, main sections, lists</li>
-            <li><strong>Implement responsive flexbox layouts</strong> - make it work on mobile and desktop</li>
-            <li><strong>Create visual hierarchy</strong> - use typography, spacing, and color to guide the user's eye</li>
-            <li><strong>Design for usability</strong> - this should be easy to follow while cooking</li>
-            <li><strong>Make it beautiful</strong> - choose cohesive colors, fonts, and spacing</li>
-        </ul>
-        <h3>Focus Areas:</h3>
-        <ul>
-            <li>Layout: Use flexbox for responsive design</li>
-            <li>Typography: Create clear information hierarchy</li>
-            <li>Color & Contrast: Ensure readability</li>
-            <li>Spacing: Use consistent margins and padding</li>
-            <li>Mobile-first: Design works on small screens</li>
-        </ul>
     </div>
 </body>
 </html>

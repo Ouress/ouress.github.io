@@ -1,0 +1,17 @@
+Chosen Aesthetic: Frutiger Aero (Windows Vista mainly)
+
+1. What was your main design strategy for organizing the information?
+
+I took advantage of desktop windows as a way to organize each flexbox into different easy-to-read sections. Because they were all rectangular, it was easy to work on the fly and plan a loose grid.
+
+2. How did you prioritize different pieces of content?
+
+I wanted the header to be front and center, with the introduction, recipe details, ingredients, and instructions following after in that hierarchy. Some other desktop widgets were added to break up the text windows and to add a bit of interesting design.
+
+3. What challenges did you encounter with responsive layout?
+
+The sidebar widget I added would not play well with the mobile version of my page, which was understandable. I tried forcing it to the side but gave up and just let it wrap around to the bottom of the page.
+
+4. What trade-offs did your aesthetic require?
+
+I don’t think there were any major trade-offs; it was just a very time-consuming project since I had to learn some new techniques such as adding drop shadows, playing with transparency, creating elements without png assets, etc.

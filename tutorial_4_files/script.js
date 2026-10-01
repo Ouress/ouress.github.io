@@ -36,7 +36,10 @@ const guestField   = document.querySelector('#guest-field');
 // const btnNo        = ;
 // const confirmation = ;
 // const regret       = ;
-
+const btnYes       = document.querySelector('#btn-yes');
+const btnNo        = document.querySelector('#btn-no');
+const confirmation = document.querySelector('#confirmation');
+const regret       = document.querySelector('#regret');
 
 // ── 3. HELPERS: small functions that do one thing ───────────
 //
@@ -68,8 +71,14 @@ const getGuests = () => Number(guestInput.value);
 btnYes.addEventListener('click', () => {
 
   // YOUR CODE HERE
-
-
+  isGoing = true;
+  isNotGoing = false;
+  btnYes.classList.add('active');
+  btnNo.classList.remove('active');
+  guestField.classList.remove('hidden');
+  confirmation.classList.remove('hidden');
+  regret.classList.add('hidden');
+  updateConfirmation();
 });
 
 
@@ -83,8 +92,14 @@ btnYes.addEventListener('click', () => {
 btnNo.addEventListener('click', () => {
 
   // YOUR CODE HERE
-
-
+  isGoing = false;
+  isNotGoing = true;
+  btnNo.classList.add('active');
+  btnYes.classList.remove('active');
+  guestField.classList.add('hidden');
+  confirmation.classList.add('hidden');
+  regret.classList.remove('hidden');
+  regret.textContent = `${getName()} can't make it this time.`;
 });
 
 
@@ -106,11 +121,19 @@ const updateConfirmation = () => {
   const guests = getGuests();
 
   // YOUR CODE HERE: build guestLine based on guests value
+  let guestLine;
+  if (guests === 0) {
+    guestLine = 'flying solo.';
+  } else if (guests === 1) {
+    guestLine = 'bringing 1 guest.';
+  } else {
+    guestLine = `bringing ${guests} guests.`;
+  }
 
 
   // YOUR CODE HERE: set confirmation.textContent using a template literal
   // Example shape: `${getName()} is coming — ${guestLine}`
-
+  confirmation.textContent = `${getName()} is coming — ${guestLine}`;
 };
 
 
@@ -125,15 +148,19 @@ const updateConfirmation = () => {
 nameInput.addEventListener('input', () => {
 
   // YOUR CODE HERE
-
-
+  if (isGoing) {
+    updateConfirmation();
+  } else if (isNotGoing) {
+    regret.textContent = `${getName()} can't make it this time.`;
+  }
 });
 
 guestInput.addEventListener('input', () => {
 
   // YOUR CODE HERE
-
-
+  if (isGoing) {
+    updateConfirmation();
+  }
 });
 
 
